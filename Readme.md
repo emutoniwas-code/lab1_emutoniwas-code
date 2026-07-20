@@ -3,17 +3,23 @@
 Calculates a student's final academic standing from `grades.csv`, and
 archives/resets the CSV file using a Bash organizer script.
 
-## Files
+## Files in this repo
 
-- `grade-evaluator.py` — reads a CSV of grades, validates it, calculates
-  the final GPA, prints PASSED/FAILED, and identifies which failed
-  Formative assignment(s) are eligible for resubmission.
+- `grade-evaluator.py` — reads a `grades.csv` file you supply, validates
+  it, calculates the final GPA, prints PASSED/FAILED, and identifies
+  which failed Formative assignment(s) are eligible for resubmission.
 - `organizer.sh` — archives the current `grades.csv` into `archive/` with
   a timestamped filename, resets a fresh empty `grades.csv`, and logs
   every run to `organizer.log`.
-- `grades.csv` — the input data file.
+- `Readme.md` — this file.
+
+**Note:** `grades.csv` is not included in this repo. You need to create
+your own in the same folder before running either script — see the
+format below.
 
 ## `grades.csv` format
+
+The evaluator expects a CSV with these columns:
 
 | Column     | Description                          |
 |------------|---------------------------------------|
@@ -22,7 +28,7 @@ archives/resets the CSV file using a Bash organizer script.
 | score      | Score obtained (0–100)                |
 | weight     | Weight of the assignment (out of 100) |
 
-Example (this repo's actual `grades.csv`):
+Example:
 
 ```csv
 assignment,group,score,weight
